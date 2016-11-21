@@ -7,7 +7,7 @@ function list(xml) {
   xml = div.children[0];
   var i = 0;
   for (; i < xml.children.length; i++) { 
-    var a document.createElement("A");
+    var a = document.createElement("A");
     a.style = "font-size:24pt;";
     a.innerHTML = xml.children[i].name;
     var p = document.createElement("P");
