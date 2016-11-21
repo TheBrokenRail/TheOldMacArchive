@@ -5,9 +5,11 @@ function list(xml) {
   var div = document.createElement("DIV");
   div.innerHTML = xml;
   xml = div.children[0];
-  console.log(xml);
   var i = 0;
-  for (; i < xml.children.length; i++) { 
+  for (; i < xml.children.length; i++) {
+    console.log(xml.children);
+    console.log(xml.children[0]);
+    console.log(xml.children[0].name);
     var a = document.createElement("A");
     a.style = "font-size:24pt;";
     a.innerHTML = xml.children[i].name;
