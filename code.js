@@ -5,6 +5,7 @@ function list(xml) {
   var div = document.createElement("DIV");
   div.innerHTML = xml;
   xml = div.children[0];
+  console.log(xml);
   var i = 0;
   for (; i < xml.children.length; i++) { 
     var a = document.createElement("A");
