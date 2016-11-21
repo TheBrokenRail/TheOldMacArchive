@@ -7,14 +7,12 @@ function list(xml) {
   xml = div.children[0];
   var i = 0;
   for (; i < xml.children.length; i++) {
-    console.log(xml.children);
-    console.log(xml.children[0]);
-    console.log(xml.children[0].name);
     var a = document.createElement("A");
     a.style = "font-size:24pt;";
-    a.innerHTML = xml.children[i].name;
+    a.innerHTML = xml.children[i].getAttribute("name");
+    console.log(xml.children[i].getAttribute("name"));
     var p = document.createElement("P");
-    p.innerHTML = xml.children[i].description;
+    p.innerHTML = xml.children[i].getAttribute("description");
     var content = document.getElementById("content");
     content.appendChild(a);
     content.appendChild(p);
