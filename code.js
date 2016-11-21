@@ -10,7 +10,6 @@ function list(xml) {
     var a = document.createElement("A");
     a.style = "font-size:24pt;";
     a.innerHTML = xml.children[i].getAttribute("name");
-    console.log(xml.children[i].getAttribute("name"));
     var p = document.createElement("P");
     p.innerHTML = xml.children[i].getAttribute("description");
     var content = document.getElementById("content");
