@@ -27,6 +27,7 @@ function list(xml) {
 }
 
 window.onload = function () {
+  console.log("DEBUG");
   var content = document.getElementById("content");
   content.innerHTML = "";
   if (state == 0) {
