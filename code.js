@@ -8,12 +8,18 @@ function list(xml) {
   xml = div.children[0];
   var i = 0;
   for (; i < xml.children.length; i++) {
-    var a = document.createElement("NAME");
-    a.innerHTML = "<p>" + xml.children[i].getAttribute("name") + "</p>";
+    var a = document.createElement("A");
+    a.id = "name";
+    a.href = xml.children[i].id;
+    a.innerHTML = xml.children[i].getAttribute("name");
     var p = document.createElement("P");
-    p.innerHTML = "<p>" + xml.children[i].getAttribute("description") + "</p>";
+    p.innerHTML = xml.children[i].getAttribute("p");
+    p.id = "description";
     var content = document.getElementById("content");
     if (xml.children[i].getAttribute("name").search(search) != -1 && searchBool == true) {
+      content.appendChild(a);
+      content.appendChild(p);
+    } else if (searchBool == false) {
       content.appendChild(a);
       content.appendChild(p);
     }
