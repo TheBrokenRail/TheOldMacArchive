@@ -7,11 +7,10 @@ function list(xml) {
   xml = div.children[0];
   var i = 0;
   for (; i < xml.children.length; i++) {
-    var a = document.createElement("A");
-    a.style = "font-size:24pt;";
-    a.innerHTML = xml.children[i].getAttribute("name");
+    var a = document.createElement("NAME");
+    a.innerHTML = "<p>" + xml.children[i].getAttribute("name") + "</p>";
     var p = document.createElement("P");
-    p.innerHTML = xml.children[i].getAttribute("description");
+    p.innerHTML = "<p>" + xml.children[i].getAttribute("description") + "</p>";
     var content = document.getElementById("content");
     content.appendChild(a);
     content.appendChild(p);
