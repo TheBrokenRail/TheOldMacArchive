@@ -1,6 +1,8 @@
 name {
   font-size: 18pt;
+  padding-bottom: 0;
 }
 description {
   font-size: 12pt;
+  padding-top: 0;
 }
