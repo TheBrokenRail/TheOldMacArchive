@@ -12,8 +12,10 @@ function list(xml) {
     var p = document.createElement("P");
     p.innerHTML = "<p>" + xml.children[i].getAttribute("description") + "</p>";
     var content = document.getElementById("content");
-    content.appendChild(a);
-    content.appendChild(p);
+    if (xml.children[i].getAttribute("name").search(search) != -1 && search != null) {
+      content.appendChild(a);
+      content.appendChild(p);
+    }
   }
 }
 
