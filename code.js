@@ -29,6 +29,7 @@ window.onload = function () {
     button.innerHTML = "Search";
     button.onclick = function () {
       search = input.value;
+      window.onload();
     }
     content.appendChild(input);
     content.appendChild(button);
