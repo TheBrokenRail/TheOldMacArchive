@@ -1,5 +1,6 @@
 var state = 0;
 var search = null;
+var searchBool = false;
 
 function list(xml) {
   var div = document.createElement("DIV");
@@ -12,7 +13,7 @@ function list(xml) {
     var p = document.createElement("P");
     p.innerHTML = "<p>" + xml.children[i].getAttribute("description") + "</p>";
     var content = document.getElementById("content");
-    if (xml.children[i].getAttribute("name").search(search) != -1 && search != null) {
+    if (xml.children[i].getAttribute("name").search(search) != -1 && searchBool == true) {
       content.appendChild(a);
       content.appendChild(p);
     }
@@ -29,6 +30,7 @@ window.onload = function () {
     button.innerHTML = "Search";
     button.onclick = function () {
       search = input.value;
+      searchBool = true;
       window.onload();
     }
     content.appendChild(input);
