@@ -13,7 +13,7 @@ function list(xml) {
     a.href = "#" + xml.children[i].id;
     a.innerHTML = xml.children[i].getAttribute("name");
     var p = document.createElement("P");
-    p.innerHTML = xml.children[i].getAttribute("p");
+    p.innerHTML = xml.children[i].getAttribute("description");
     p.id = "description";
     var content = document.getElementById("content");
     if (xml.children[i].getAttribute("name").search(search) != -1 && searchBool == true) {
