@@ -1,6 +1,20 @@
 var state = 0;
 var search = null;
 var searchBool = false;
+var tabs = [];
+
+function showTab(tab,id) {
+  var tabObj = tabs[tab];
+  var i = 0;
+  var content = document.getElementById("content");
+  for (; i < tabObj.length; i++) {
+    var a = document.createElement("A");
+    a.innerHTML = tabObj.files[i];
+    a.href = "./archive/" + id + tabObj.files[i];
+    content.appendChild(a);
+    content.appendChild(document.createElement("BR"));
+  }
+}
 
 function view(id) {
   var xml = null;
@@ -24,7 +38,17 @@ function view(id) {
   var i = 1;
   for (; i < xml.children.length; i++) {
     var a = document.createElement("A");
-    a.innerHTML
+    a.innerHTML = xml.children[i].value;
+    a.href = "#" + id;
+    a.setAttribute("onclick","showTab(" + i + "," + id + ");");
+    var xmlInner = xml.children[i].children;
+    var k = 0;
+    tabs = [];
+    var tabs[i] = new Object();
+    for (; k < xmlInner.length; k++) {
+      tabs[i].files = [];
+      tabs[i].files.push(xmlInner[k].value);
+    }
   }
 }
 
