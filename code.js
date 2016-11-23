@@ -19,40 +19,38 @@ function showTab(tab,id) {
 function view(id) {
   var xml = null;
   var r = new XMLHttpRequest();
-  var done = false;
   r.onreadystatechange = function() {
     if (this.readyState === 4) {
       if (r.status === 200) {
         xml = this.responseText;
-        done = true;
+        var div = document.createElement("DIV");
+        div.innerHTML = xml;
+        xml = div.children[0];
+        var description = document.createElement("P");
+        description.innerHTML = xml.children[0].value;
+        var content = document.getElementById("content");
+        content.appendChild(description);
+        var i = 1;
+        for (; i < xml.children.length; i++) {
+          var a = document.createElement("A");
+          a.innerHTML = xml.children[i].value;
+          a.href = "#" + id;
+          a.setAttribute("onclick","showTab(" + i + "," + id + ");");
+          var xmlInner = xml.children[i].children;
+          var k = 0;
+          tabs = [];
+          tabs[i] = new Object();
+          for (; k < xmlInner.length; k++) {
+            tabs[i].files = [];
+            tabs[i].files.push(xmlInner[k].value);
+          }
+        }
       }
     }
   };
   r.open('GET', "./archive/" + id + "/index.xml");
   r.send();
-  while (done == false) {}
-  var div = document.createElement("DIV");
-  div.innerHTML = xml;
-  xml = div.children[0];
-  var description = document.createElement("P");
-  description.innerHTML = xml.children[0].value;
-  var content = document.getElementById("content");
-  content.appendChild(description);
-  var i = 1;
-  for (; i < xml.children.length; i++) {
-    var a = document.createElement("A");
-    a.innerHTML = xml.children[i].value;
-    a.href = "#" + id;
-    a.setAttribute("onclick","showTab(" + i + "," + id + ");");
-    var xmlInner = xml.children[i].children;
-    var k = 0;
-    tabs = [];
-    tabs[i] = new Object();
-    for (; k < xmlInner.length; k++) {
-      tabs[i].files = [];
-      tabs[i].files.push(xmlInner[k].value);
-    }
-  }
+
 }
 
 function list(xml) {
