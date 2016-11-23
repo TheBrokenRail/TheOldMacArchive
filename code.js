@@ -44,7 +44,8 @@ function view(id) {
     a.innerHTML = xml.children[i].value;
     a.href = "#" + id;
     a.setAttribute("onclick","showTab(" + i + "," + id + ");");
-    var xmlInner = xml.children[i].children;    var k = 0;
+    var xmlInner = xml.children[i].children;
+    var k = 0;
     tabs = [];
     tabs[i] = new Object();
     for (; k < xmlInner.length; k++) {
