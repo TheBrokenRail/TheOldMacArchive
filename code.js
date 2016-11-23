@@ -19,15 +19,18 @@ function showTab(tab,id) {
 function view(id) {
   var xml = null;
   var r = new XMLHttpRequest();
+  var done = false;
   r.onreadystatechange = function() {
     if (this.readyState === 4) {
       if (r.status === 200) {
         xml = this.responseText;
+        done = true;
       }
     }
   };
   r.open('GET', "./archive/" + id + "/index.xml");
   r.send();
+  while (done == false) {}
   var div = document.createElement("DIV");
   div.innerHTML = xml;
   xml = div.children[0];
@@ -41,8 +44,7 @@ function view(id) {
     a.innerHTML = xml.children[i].value;
     a.href = "#" + id;
     a.setAttribute("onclick","showTab(" + i + "," + id + ");");
-    var xmlInner = xml.children[i].children;
-    var k = 0;
+    var xmlInner = xml.children[i].children;    var k = 0;
     tabs = [];
     tabs[i] = new Object();
     for (; k < xmlInner.length; k++) {
@@ -79,7 +81,7 @@ function list(xml) {
 
 window.onload = function () {
   var id = location.hash.substring(1);
-  if (id.length < 1 || isFinite(id)) {
+  if (id.length > 1) {
     view(id);
     state = 1;
   } else {
