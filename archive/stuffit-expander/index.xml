@@ -1,5 +1,6 @@
 <xml>
-<version value="1.0" description="Test">
+<meta description="Test"></meta>
+<version value="1.0">
 <file value="File"></file>
 </version>
 </xml>
