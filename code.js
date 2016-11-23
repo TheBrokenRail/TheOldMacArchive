@@ -44,7 +44,7 @@ function view(id) {
     var xmlInner = xml.children[i].children;
     var k = 0;
     tabs = [];
-    var tabs[i] = new Object();
+    tabs[i] = new Object();
     for (; k < xmlInner.length; k++) {
       tabs[i].files = [];
       tabs[i].files.push(xmlInner[k].value);
