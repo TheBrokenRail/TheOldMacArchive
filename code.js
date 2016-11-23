@@ -2,6 +2,19 @@ var state = 0;
 var search = null;
 var searchBool = false;
 
+function view(id) {
+  var r = new XMLHttpRequest();
+  r.onreadystatechange = function() {
+    if (this.readyState === 4) 
+      if (r.status === 200) {
+        xml = this.responseText;
+      }
+    }
+  };
+  r.open('GET', "index.xml");
+  r.send();
+}
+
 function list(xml) {
   var div = document.createElement("DIV");
   div.innerHTML = xml;
@@ -28,7 +41,13 @@ function list(xml) {
 }
 
 window.onload = function () {
-  console.log("DEBUG");
+  var id = location.hash.substring(1);
+  if (id.length < 1 || isFinite(id)) {
+    view(id);
+    state = 1;
+  } else {
+    state = 0;
+  }
   var content = document.getElementById("content");
   content.innerHTML = "";
   if (state == 0) {
