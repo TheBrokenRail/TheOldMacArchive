@@ -3,16 +3,29 @@ var search = null;
 var searchBool = false;
 
 function view(id) {
+  var xml = null;
   var r = new XMLHttpRequest();
   r.onreadystatechange = function() {
-    if (this.readyState === 4) 
+    if (this.readyState === 4) {
       if (r.status === 200) {
         xml = this.responseText;
       }
     }
   };
-  r.open('GET', "index.xml");
+  r.open('GET', "./archive/" + id + "/index.xml");
   r.send();
+  var div = document.createElement("DIV");
+  div.innerHTML = xml;
+  xml = div.children[0];
+  var description = document.createElement("P");
+  description.innerHTML = xml.children[0].value;
+  var content = document.getElementById("content");
+  content.appendChild(description);
+  var i = 1;
+  for (; i < xml.children.length; i++) {
+    var a = document.createElement("A");
+    a.innerHTML
+  }
 }
 
 function list(xml) {
