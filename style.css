@@ -2,6 +2,9 @@
   font-size: 18pt;
   padding: 0;
 }
+#longName {
+  font-size: 18pt;
+}
 #description {
   font-size: 12pt;
   padding: 0;
