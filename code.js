@@ -66,7 +66,7 @@ function list(xml) {
     var a = document.createElement("A");
     a.id = "name";
     a.href = "#" + xml.children[i].id;
-    eval("a.onclick = function () {document.location = document.location.origin + document.location.pathname + \"#\" + " + xml.children[i].id + ";document.location.reload();}");
+    eval("a.onclick = function () {document.location = document.location.origin + document.location.pathname + \"#\" + \"" + xml.children[i].id + "\";document.location.reload();}");
     a.innerHTML = xml.children[i].getAttribute("name");
     var p = document.createElement("P");
     p.innerHTML = xml.children[i].getAttribute("description");
