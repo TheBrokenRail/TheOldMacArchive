@@ -47,7 +47,9 @@ function view(id) {
             tabs[i].files.push(xmlInner[k].getAttribute("value"));
           }
         }
+        showTab(0,id);
         var files = document.createElement("DIV");
+        files.id = "files";
         content.appendChild(files);
       } else {
         document.location = document.location.origin + document.location.pathname;
