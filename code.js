@@ -28,10 +28,14 @@ function view(id) {
         var div = document.createElement("DIV");
         div.innerHTML = xml;
         xml = div.children[0];
+        var name = document.createElement("P");
+        name.innerHTML = xml.children[0].getAttribute("name");
+        name.id = "longName";
         var description = document.createElement("P");
         description.innerHTML = xml.children[0].getAttribute("value");
         description.id = "longDescription";
         var content = document.getElementById("content");
+        content.appendChild(name);
         content.appendChild(description);
         var i = 1;
         tabs = [];
