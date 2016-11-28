@@ -33,6 +33,7 @@ function view(id) {
         content.appendChild(description);
         var i = 1;
         for (; i < xml.children.length; i++) {
+          console.log("run");
           var a = document.createElement("A");
           a.innerHTML = xml.children[i].getAttribute("value");
           a.href = "#" + id;
