@@ -36,7 +36,7 @@ function view(id) {
           var a = document.createElement("A");
           a.innerHTML = xml.children[i].getAttribute("value");
           a.href = "#" + id;
-          a.setAttribute("onclick","showTab(" + i + "," + id + ");");
+          a.setAttribute("onclick","showTab(" + i + ",\"" + id + "\");");
           content.appendChild(a);
           var xmlInner = xml.children[i].children;
           var k = 0;
