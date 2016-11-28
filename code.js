@@ -7,6 +7,7 @@ function showTab(tab,id) {
   var tabObj = tabs[tab];
   var i = 0;
   var content = document.getElementById("files");
+  content.innerHTML = "";
   for (; i < tabObj.length; i++) {
     var a = document.createElement("A");
     a.innerHTML = tabObj.files[i];
@@ -116,4 +117,8 @@ window.onload = function () {
     r.open('GET', "index.xml");
     r.send();
   }
+}
+
+window.onhashchange = function () {
+  window.onload();
 }
