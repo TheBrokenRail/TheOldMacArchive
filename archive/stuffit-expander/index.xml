@@ -1,6 +1,9 @@
 <xml>
-<meta value="Test"></meta>
-<version value="1.0">
-<file value="File"></file>
+<meta value="Program To Extract SIT Archives"></meta>
+<version value="4.5">
+<file value="File" name="Test Dummy 1"></file>
+</version>
+<version value="5.5">
+<file value="File2" name="Test Dummy 2"></file>
 </version>
 </xml>
