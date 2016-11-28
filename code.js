@@ -4,12 +4,11 @@ var searchBool = false;
 var tabs = [];
 
 function showTab(tab,id) {
-  console.log(tab);
-  var tabObj = tabs[tab].files;
+  var tabObj = tabs[tab];
   var i = 0;
   var content = document.getElementById("files");
   content.innerHTML = "";
-  for (; i < tabObj.length; i++) {
+  for (; i < tabObj.files.length; i++) {
     var a = document.createElement("A");
     a.innerHTML = tabObj.files[i];
     a.href = "./archive/" + id + tabObj.files[i];
