@@ -47,11 +47,10 @@ function view(id) {
             tabs[i].files.push(xmlInner[k].getAttribute("value"));
           }
         }
-        showTab(0,id);
         var files = document.createElement("DIV");
         files.id = "files";
-        console.log(files);
         content.appendChild(files);
+        showTab(0,id);
       } else {
         document.location = document.location.origin + document.location.pathname;
         document.location.reload();
