@@ -32,6 +32,7 @@ function view(id) {
         var content = document.getElementById("content");
         content.appendChild(description);
         var i = 1;
+        tabs = [];
         for (; i < xml.children.length; i++) {
           var a = document.createElement("A");
           a.innerHTML = xml.children[i].getAttribute("value");
@@ -39,14 +40,11 @@ function view(id) {
           a.setAttribute("onclick","showTab(" + (i - 1) + ",\"" + id + "\");");
           content.appendChild(a);
           var xmlInner = xml.children[i].children;
-          console.log(xmlInner);
-          var k = 0;
-          tabs = [];
+          var k = 0;          
           tabs[i - 1] = new Object();
           tabs[i - 1].files = [];
           tabs[i - 1].names = [];
           for (; k < xmlInner.length; k++) {
-            console.log(xmlInner[k]);
             tabs[i - 1].files.push(xmlInner[k].getAttribute("value"));
             tabs[i - 1].names.push(xmlInner[k].getAttribute("name"));
           }
