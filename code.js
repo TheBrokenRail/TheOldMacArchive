@@ -12,6 +12,7 @@ function showTab(tab,id) {
     var a = document.createElement("A");
     a.innerHTML = tabObj.names[i] + " (" + tabObj.files[i] + ")";
     a.href = "./archive/" + id + "/" + tabObj.files[i];
+    a.id = "file";
     content.appendChild(a);
     content.appendChild(document.createElement("BR"));
   }
@@ -29,6 +30,7 @@ function view(id) {
         xml = div.children[0];
         var description = document.createElement("P");
         description.innerHTML = xml.children[0].getAttribute("value");
+        description.id = "longDescription";
         var content = document.getElementById("content");
         content.appendChild(description);
         var i = 1;
@@ -38,7 +40,9 @@ function view(id) {
           a.innerHTML = xml.children[i].getAttribute("value");
           a.href = "#" + id;
           a.setAttribute("onclick","showTab(" + (i - 1) + ",\"" + id + "\");");
+          a.id = "tab";
           content.appendChild(a);
+          content.appendChild(document.createTextNode(" "));
           var xmlInner = xml.children[i].children;
           var k = 0;          
           tabs[i - 1] = new Object();
