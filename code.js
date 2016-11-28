@@ -6,7 +6,7 @@ var tabs = [];
 function showTab(tab,id) {
   var tabObj = tabs[tab];
   var i = 0;
-  var content = document.getElementById("content");
+  var content = document.getElementById("files");
   for (; i < tabObj.length; i++) {
     var a = document.createElement("A");
     a.innerHTML = tabObj.files[i];
@@ -27,13 +27,13 @@ function view(id) {
         div.innerHTML = xml;
         xml = div.children[0];
         var description = document.createElement("P");
-        description.innerHTML = xml.children[0].value;
+        description.innerHTML = xml.children[0].getAttribute("value");
         var content = document.getElementById("content");
         content.appendChild(description);
         var i = 1;
         for (; i < xml.children.length; i++) {
           var a = document.createElement("A");
-          a.innerHTML = xml.children[i].value;
+          a.innerHTML = xml.children[i].getAttribute("value");
           a.href = "#" + id;
           a.setAttribute("onclick","showTab(" + i + "," + id + ");");
           var xmlInner = xml.children[i].children;
@@ -42,15 +42,19 @@ function view(id) {
           tabs[i] = new Object();
           for (; k < xmlInner.length; k++) {
             tabs[i].files = [];
-            tabs[i].files.push(xmlInner[k].value);
+            tabs[i].files.push(xmlInner[k].getAttribute("value"));
           }
         }
+        var files = document.createElement("DIV");
+        content.appendChild(files);
+      } else {
+        document.location = document.location.origin + document.location.pathname;
+        document.location.reload();
       }
     }
   };
   r.open('GET', "./archive/" + id + "/index.xml");
   r.send();
-
 }
 
 function list(xml) {
@@ -62,7 +66,7 @@ function list(xml) {
     var a = document.createElement("A");
     a.id = "name";
     a.href = "#" + xml.children[i].id;
-    a.setAttribute("onclick", "window.onload()");
+    a.setAttribute("onclick", "document.location = document.location.origin + document.location.pathname + " + "#" + xml.children[i].id + ";document.location.reload();");
     a.innerHTML = xml.children[i].getAttribute("name");
     var p = document.createElement("P");
     p.innerHTML = xml.children[i].getAttribute("description");
