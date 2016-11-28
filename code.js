@@ -11,7 +11,7 @@ function showTab(tab,id) {
   for (; i < tabObj.files.length; i++) {
     var a = document.createElement("A");
     a.innerHTML = tabObj.files[i];
-    a.href = "./archive/" + id + tabObj.files[i];
+    a.href = "./archive/" + id + "/" + tabObj.files[i];
     content.appendChild(a);
     content.appendChild(document.createElement("BR"));
   }
@@ -47,6 +47,7 @@ function view(id) {
             tabs[i - 1].files.push(xmlInner[k].getAttribute("value"));
           }
         }
+        content.appendChild(document.createElement("BR"));
         var files = document.createElement("DIV");
         files.id = "files";
         content.appendChild(files);
