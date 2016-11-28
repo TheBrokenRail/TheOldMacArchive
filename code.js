@@ -46,6 +46,7 @@ function view(id) {
           tabs[i - 1].files = [];
           tabs[i - 1].names = [];
           for (; k < xmlInner.length; k++) {
+            console.log(xmlInner[k]);
             tabs[i - 1].files.push(xmlInner[k].getAttribute("value"));
             tabs[i - 1].names.push(xmlInner[k].getAttribute("name"));
           }
