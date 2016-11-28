@@ -4,7 +4,7 @@ var searchBool = false;
 var tabs = [];
 
 function showTab(tab,id) {
-  var tabObj = tabs[tab];
+  var tabObj = tabs[tab.files];
   var i = 0;
   var content = document.getElementById("files");
   content.innerHTML = "";
