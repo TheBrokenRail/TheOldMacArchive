@@ -4,6 +4,7 @@ var searchBool = false;
 var tabs = [];
 
 function showTab(tab,id) {
+  console.log(tab);
   var tabObj = tabs[tab].files;
   var i = 0;
   var content = document.getElementById("files");
@@ -41,10 +42,10 @@ function view(id) {
           var xmlInner = xml.children[i].children;
           var k = 0;
           tabs = [];
-          tabs[i] = new Object();
+          tabs[i - 1] = new Object();
           for (; k < xmlInner.length; k++) {
-            tabs[i].files = [];
-            tabs[i].files.push(xmlInner[k].getAttribute("value"));
+            tabs[i - 1].files = [];
+            tabs[i - 1].files.push(xmlInner[k].getAttribute("value"));
           }
         }
         var files = document.createElement("DIV");
