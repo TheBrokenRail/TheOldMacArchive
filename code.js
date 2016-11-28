@@ -50,6 +50,7 @@ function view(id) {
         showTab(0,id);
         var files = document.createElement("DIV");
         files.id = "files";
+        console.log(files);
         content.appendChild(files);
       } else {
         document.location = document.location.origin + document.location.pathname;
