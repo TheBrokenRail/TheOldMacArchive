@@ -65,7 +65,7 @@ function list(xml) {
   for (; i < xml.children.length; i++) {
     var a = document.createElement("A");
     a.id = "name";
-    a.href = "#" + xml.children[i].id;
+    // a.href = "#" + xml.children[i].id;
     a.setAttribute("onclick", "document.location = document.location.origin + document.location.pathname + " + "#" + xml.children[i].id + ";document.location.reload();");
     a.innerHTML = xml.children[i].getAttribute("name");
     var p = document.createElement("P");
