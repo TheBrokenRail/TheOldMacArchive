@@ -47,7 +47,7 @@ function view(id) {
           a.setAttribute("onclick","showTab(" + (i - 1) + ",\"" + id + "\");");
           a.id = "tab";
           content.appendChild(a);
-          content.appendChild(document.createTextNode(" "));
+          // content.appendChild(document.createTextNode(" "));
           var xmlInner = xml.children[i].children;
           var k = 0;          
           tabs[i - 1] = new Object();
