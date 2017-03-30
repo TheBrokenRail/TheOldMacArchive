@@ -29,3 +29,11 @@ body {
 #tab:hover {
   background-color: darkgrey;
 }
+#file {
+  margin: 4px;
+  padding: 16px;
+  color: white;
+}
+#file:hover {
+  background-color: darkgrey;
+}
