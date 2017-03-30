@@ -15,5 +15,9 @@
   padding: 0;
 }
 #tab {
-  padding: 36px;
+  margin: 16px;
+  padding: 16px;
+}
+#tab:hover {
+  background-color: grey;
 }
