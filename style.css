@@ -1,22 +1,30 @@
+body {
+  background-color: grey;
+}
 #name {
   font-size: 18pt;
   padding: 0;
+  color: white;
 }
 #longName {
   font-size: 18pt;
   padding: 0;
+  color: white;
 }
 #longDescription {
   font-size: 12pt;
   padding: 0;
+  color: white;
 }
 #description {
   font-size: 12pt;
   padding: 0;
+  color: white;
 }
 #tab {
   margin: 4px;
   padding: 16px;
+  color: white;
 }
 #tab:hover {
   background-color: lightgrey;
