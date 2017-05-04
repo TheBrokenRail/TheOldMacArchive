@@ -1,6 +1,13 @@
 body {
   background-color: grey;
 }
+#search {
+  padding-bottom: 18px;
+  background-color: grey;
+}
+#searchButton {
+  padding-bottom: 18px;
+}
 #name {
   font-size: 18pt;
   margin: 8px;
