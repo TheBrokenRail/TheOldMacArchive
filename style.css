@@ -20,17 +20,20 @@ body {
 #longName {
   font-size: 18pt;
   padding: 0;
+  padding-left: 18px;
   color: white;
 }
 #longDescription {
   font-size: 12pt;
   padding: 0;
+  padding-left: 18px;
   padding-bottom: 18px;
   color: white;
 }
 #description {
   font-size: 12pt;
   padding: 0;
+  padding-left: 18px;
   color: white;
 }
 #tab {
