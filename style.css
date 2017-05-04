@@ -18,6 +18,7 @@ body {
 #longDescription {
   font-size: 12pt;
   padding: 0;
+  padding-bottom: 18px;
   color: white;
 }
 #description {
