@@ -3,8 +3,12 @@ body {
 }
 #name {
   font-size: 18pt;
-  padding: 0;
+  margin: 8px;
+  padding: 16px;
   color: white;
+}
+#name:hover {
+  background-color: darkgrey;
 }
 #longName {
   font-size: 18pt;
@@ -22,7 +26,7 @@ body {
   color: white;
 }
 #tab {
-  margin: 4px;
+  margin: 8px;
   padding: 16px;
   color: white;
 }
@@ -30,10 +34,13 @@ body {
   background-color: darkgrey;
 }
 #file {
-  margin: 4px;
+  margin: 8px;
   padding: 16px;
   color: white;
 }
 #file:hover {
   background-color: darkgrey;
+}
+#files {
+  margin: 18px;
 }
