@@ -110,7 +110,9 @@ window.onload = function () {
   content.innerHTML = "";
   if (state == 0) {
     var input = document.createElement("INPUT");
+    input.id = "search";
     var button = document.createElement("BUTTON");
+    button.id = "searchButton";
     var breakLine = document.createElement("BR");
     button.innerHTML = "Search";
     button.onclick = function () {
